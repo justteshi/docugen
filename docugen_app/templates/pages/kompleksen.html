@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    .form-control {
+        margin: 1rem;
+    }
+</style>
+
+<h1 style="margin:30px 0 30px 0; text-align: center;">Комплексен Доклад</h1>
+
+<div class="kompleksen-form-wrapper" >
+    <form method="POST">
+        {% csrf_token %}
+        <input class="form-control" name="docnum" type="number" placeholder="Изходен Номер">
+        <input class="form-control" name="vazlozhitel" type="text" placeholder="Възложител">
+        <input class="form-control" name="build" type="text" placeholder="Строеж">
+        <input class="form-control" name="location" type="text" placeholder="Местонахождение">
+        <textarea class="form-control"></textarea>
+        <div style="display:flex; justify-content: center; margin-top: 20px;">
+            <button class="btn btn-success">Генерирай</button>
+    
+        </div>
+    </form>
+</div>
+
+{% endblock %}
