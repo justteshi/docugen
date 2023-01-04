@@ -6,6 +6,12 @@
     .form-control {
         margin: 1rem;
     }
+    .ss-value-delete {
+        width: 20px !important;
+    }
+    .ss-main {
+        margin: 1rem;
+    }
 </style>
 
 <h1 style="margin:30px 0 30px 0; text-align: center;">Комплексен Доклад</h1>
@@ -18,11 +24,25 @@
         <input class="form-control" name="build" type="text" placeholder="Строеж">
         <input class="form-control" name="location" type="text" placeholder="Местонахождение">
         <textarea class="form-control"></textarea>
+
+        <select id="multiple" multiple >
+            {% for proektant in proektants %}
+                <option>{{ proektant.name }}</option>
+            {% endfor %}
+        </select>
+        
+
         <div style="display:flex; justify-content: center; margin-top: 20px;">
             <button class="btn btn-success">Генерирай</button>
     
         </div>
     </form>
 </div>
+
+<script>
+    new SlimSelect({
+        select: '#multiple'
+    })
+</script>
 
 {% endblock %}
